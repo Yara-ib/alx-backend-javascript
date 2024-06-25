@@ -3,5 +3,5 @@ export default function createEmployeesObject(departmentName, employees) {
   for (const employee of employees) {
     newArray.push(`'${employee}'`);
   }
-  return `{ ${departmentName}: [ ${newArray} ] }`;
+  return `{${departmentName}: [${newArray}]}`;
 }
