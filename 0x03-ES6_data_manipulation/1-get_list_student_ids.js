@@ -2,8 +2,7 @@ const getListStudentIds = (arrayObjects) => {
   if (!Array.isArray(arrayObjects)) {
     return [];
   }
-  const mappedObjects = arrayObjects.map((obj) => obj.id);
-  return mappedObjects;
+  return arrayObjects.map((obj) => obj.id);
 };
 
 module.exports = getListStudentIds;
