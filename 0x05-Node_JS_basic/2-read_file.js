@@ -19,12 +19,9 @@ const countStudents = (path) => {
     studentsNumber += 1;
   }
   console.log(`Number of students: ${studentsNumber}`);
-  for (const item in items) {
-    if (items.hasOwnProperty(item)) {
-      console.log(
-        `Number of students in ${item}: ${items[item].length}. List: ${items[item].join(', ')}`);
-    }
-  }
-};
 
+  Object.keys(items).forEach((field) => {
+    console.log(`Number of students in ${field}: ${items[field].length}. List: ${items[field].join(', ')}`);
+  });
+};
 module.exports = countStudents;
