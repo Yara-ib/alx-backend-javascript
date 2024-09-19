@@ -1,4 +1,4 @@
-const countStudents = require('../../7-read_file_async');
+import countStudents from '../../7-read_file_async';
 
 class StudentsController {
   static async getAllStudents(request, response) {
@@ -11,4 +11,4 @@ class StudentsController {
   }
 }
 
-module.exports = StudentsController;
+export default StudentsController;
