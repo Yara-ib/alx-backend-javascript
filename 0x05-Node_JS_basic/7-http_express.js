@@ -25,3 +25,5 @@ app.get('/students', (req, res) => {
 app.listen(port, hostname, () => {
   if (error) console.error();
 });
+
+module.exports = app;
