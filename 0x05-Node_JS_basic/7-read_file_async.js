@@ -13,14 +13,15 @@ const countStudents = (path) => new Promise((resolve, reject) => {
         items[field].push(firstname);
         studentsNumber += 1;
       }
+      let output = 'This is the list of our students\n';
       /* eslint-disable no-plusplus, no-unused-vars */
-      console.log(`This is the list of our students\nNumber of students: ${studentsNumber}`);
+      output += `Number of students: ${studentsNumber}`;
       for (const item in items) {
         if (Object.prototype.hasOwnProperty.call(items, item)) {
-          console.log(`Number of students in ${item}: ${items[item].length}. List: ${items[item].join(', ')}`);
+          output += `Number of students in ${item}: ${items[item].length}. List: ${items[item].join(', ')}`;
         }
       }
-      resolve();
+      resolve(output);
     })
     .catch(() => {
       reject(new Error('Cannot load the database'));
