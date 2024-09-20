@@ -7,17 +7,22 @@ describe('calculateNumber', function () {
   });
 
   it('Checking when number needs to be rounded', function () {
-    assert.strictEqual(calculateNumber(1, 3.7), 5);
-    assert.strictEqual(calculateNumber(1.2, 3.7), 5);
+    assert.strictEqual(calculateNumber(1, 3.5), 5);
+    assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
 
   it('Converting string numbers to number & round it', function () {
     assert.strictEqual(calculateNumber('5.3', 3.7), 9);
   });
 
-  it('Values is missing or not a number', function () {
-    assert.strictEqual(calculateNumber(3.7), NaN);
-    assert.strictEqual(calculateNumber(), NaN);
-    assert.strictEqual(calculateNumber('str', 5), NaN);
+  it('Values is missing or NaN', function () {
+    assert.ok(isNaN(calculateNumber(3.7), NaN));
+    assert.ok(isNaN(calculateNumber(), NaN));
+    assert.ok(isNaN(calculateNumber('str', 5), NaN));
+    assert.ok(isNaN(calculateNumber(NaN, 5), NaN));
+  });
+
+  it('Checking negative values', function () {
+    assert.strictEqual(calculateNumber(-3, 3.7), 1);
   });
 });
