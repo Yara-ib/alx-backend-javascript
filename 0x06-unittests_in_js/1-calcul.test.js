@@ -2,6 +2,11 @@ const assert = require('assert');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumberUpdated', function () {
+  it('Checking general case, missing type', function () {
+    assert.throws(() => {
+      calculateNumber('str', 1, 3);
+    }, 'Error');
+  });
   describe('1 - SUM case', function () {
     it('Checking when values is negative', function () {
       assert.strictEqual(calculateNumber('SUM', -3, -4.6), -8);
