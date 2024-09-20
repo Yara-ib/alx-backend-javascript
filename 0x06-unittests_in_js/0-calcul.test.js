@@ -14,4 +14,8 @@ describe('calculateNumber', function () {
   it('Converting string numbers to number & round it', function () {
     assert.strictEqual(calculateNumber('5.3', 3.7), 9);
   });
+
+  it('One value is missing', function () {
+    assert.strictEqual(calculateNumber(3.7), NaN);
+  });
 });
