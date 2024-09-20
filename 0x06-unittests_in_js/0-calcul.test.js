@@ -24,5 +24,6 @@ describe('calculateNumber', function () {
 
   it('Checking negative values', function () {
     assert.strictEqual(calculateNumber(-3, 3.7), 1);
+    assert.strictEqual(calculateNumber(-3, -3.7), -7);
   });
 });
