@@ -82,7 +82,8 @@ describe('calculateNumberUpdated', function () {
     });
 
     it('Checking when b = 0', function () {
-      expect(() => calculateNumber('DIVIDE', 15, 0)).to.throw('Error');
+      const result = calculateNumber('DIVIDE', 5.5, 0);
+      expect(result).to.equal('Error');
     });
   });
 });
