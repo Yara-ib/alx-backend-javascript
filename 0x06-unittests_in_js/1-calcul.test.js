@@ -3,10 +3,9 @@ const calculateNumber = require('./1-calcul');
 
 describe('calculateNumberUpdated', function () {
   it('Checking general case, missing type', function () {
-    assert.throws(() => {
-      calculateNumber('str', 1, 3);
-    }, 'Error');
+    assert.strictEqual(calculateNumber('str', 1, 3), 'Error');
   });
+
   describe('1 - SUM case', function () {
     it('Checking when values is negative', function () {
       assert.strictEqual(calculateNumber('SUM', -3, -4.6), -8);
@@ -60,9 +59,7 @@ describe('calculateNumberUpdated', function () {
     });
 
     it('Checking when b = 0', function () {
-      assert.throws(() => {
-        calculateNumber('DIVIDE', 15, 0);
-      }, 'Error');
+      assert.strictEqual(calculateNumber('DIVIDE', 5, 0), 'Error');
     });
   });
 });
