@@ -15,7 +15,9 @@ describe('calculateNumber', function () {
     assert.strictEqual(calculateNumber('5.3', 3.7), 9);
   });
 
-  it('One value is missing', function () {
+  it('Values is missing or not a number', function () {
     assert.strictEqual(calculateNumber(3.7), NaN);
+    assert.strictEqual(calculateNumber(), NaN);
+    assert.strictEqual(calculateNumber('str', 5), NaN);
   });
 });
