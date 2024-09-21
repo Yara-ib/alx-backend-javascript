@@ -5,7 +5,7 @@ const sinon = require('sinon');
 describe('Test Suite', function () {
   it('Test Async with promise', function () {
     return getPaymentTokenFromAPI(true).then((response) => {
-      assert.equal(response, "{ data: 'Successful response from the API' }");
+      assert.deepEqual(response, { data: 'Successful response from the API' });
     });
   });
 
@@ -13,7 +13,7 @@ describe('Test Suite', function () {
     consoleSpy = sinon.spy(console, 'log');
     getPaymentTokenFromAPI(true).then(() => {
       expect(
-        consoleSpy.calledWith("{ data: 'Successful response from the API' }")
+        consoleSpy.calledWith({ data: 'Successful response from the API' })
       ).to.be.true;
       consoleSpy.restore();
     });
